@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Verification))]
+[RequireComponent(typeof(ObjController))]
 public class Draggable : MonoBehaviour
 {
     private Vector3 _startPosition = Vector3.zero;
-    public Sprite sprite;
 
     void Start()
     {
@@ -31,10 +30,5 @@ public class Draggable : MonoBehaviour
     {
         if (transform.position.x != _startPosition.x || transform.position.z != _startPosition.z)
             transform.position = _startPosition;
-    }
-
-    private void OnMouseDown()
-    {
-        container.Instance.AddImage(sprite);
     }
 }

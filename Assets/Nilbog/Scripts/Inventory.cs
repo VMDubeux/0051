@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class container : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
     public Image Image;
 
-    public static container Instance;
+    public static Inventory Instance;
 
     private void Awake()
     {

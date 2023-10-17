@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3d8ed5e7183c1d43848d16598eb0430, type: 3}
-  m_Name: Varinha
+  m_Name: Torta
   m_EditorClassIdentifier: 
-  Name: Varinha
-  Sprite: {fileID: 21300000, guid: e88d5afb5cab4a94f871a678530289e8, type: 3}
-  Prefab: {fileID: 228760927636400071, guid: f60ba24a0bc44cd489591d577b926098, type: 3}
+  Name: Torta
+  Sprite: {fileID: 21300000, guid: 17c992a73ef33c24496395fd7cf254bc, type: 3}
+  Prefab: {fileID: 7963829401706397960, guid: d4090b9a01d39254381849c908dfe832, type: 3}

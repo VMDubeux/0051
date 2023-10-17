@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8897914772092796935}
   m_Layer: 0
   m_Name: Arbusto
-  m_TagString: Untagged
+  m_TagString: drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,6 +65,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 0d25e015fc2334444ad0aaa037379eb8, type: 2}
+  - {fileID: 2100000, guid: 74d60ac357271194787258e60920f08e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,10 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4696c8ec1ac283409f00779ec1adce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImagemCanvas: {fileID: 0}
-  _input:
-  - {fileID: 0}
-  - {fileID: 0}
+  _objSettings: {fileID: 0}
+  _input: []
   _output: {fileID: 0}
   _status: 0
 --- !u!114 &8897914772092796935
@@ -137,4 +136,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d11ab8cf151f09449b9a98d12c740ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 15f9cb37344504b48b096e441d288020, type: 3}

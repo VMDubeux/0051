@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Verification : MonoBehaviour
+public class ObjController : MonoBehaviour
 {
-    [SerializeField] private Verification[] _input = new Verification[2];
-    [SerializeField] private Verification _output;
+    [Header("Scriptable Object Settings: ")]
+    [SerializeField] private ObjInfo _objSettings;
+
+    [Header("Inputs and Outputs: ")]
+    [SerializeField] private ObjController[] _input;
+    [SerializeField] private ObjController _output;
     [SerializeField] private bool _status;
 
     private void Active()
@@ -19,6 +23,7 @@ public class Verification : MonoBehaviour
     {
         Active();
         gameObject.SetActive(false);
+        Inventory.Instance.AddImage(_objSettings.Sprite);
     }
 
     private void Connect()
