@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d8ed5e7183c1d43848d16598eb0430, type: 3}
+  m_Name: Varinha
+  m_EditorClassIdentifier: 
+  Name: Varinha
+  Sprite: {fileID: 21300000, guid: e88d5afb5cab4a94f871a678530289e8, type: 3}
+  Prefab: {fileID: 4098559574042528643, guid: f60ba24a0bc44cd489591d577b926098, type: 3}

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Verification : MonoBehaviour
 {
-    public GameObject ImagemCanvas;
     [SerializeField] private Verification[] _input = new Verification[2];
     [SerializeField] private Verification _output;
     [SerializeField] private bool _status;
