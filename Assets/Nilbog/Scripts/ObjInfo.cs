@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Novo Objeto", menuName = "Meu jogo/Objeto", order = 1)]
 public class ObjInfo : ScriptableObject
 {
-    public string Name;
     public Sprite Sprite;
     public GameObject Prefab;
 }

@@ -22,7 +22,7 @@ public class ObjController : MonoBehaviour
     private void OnMouseDown()
     {
         Active();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         Inventory.Instance.AddImage(_objSettings.Sprite);
     }
 
@@ -37,7 +37,6 @@ public class ObjController : MonoBehaviour
             }
         }
 
-        _status = true;
         gameObject.SetActive(true);
 
         if (_output != null && _status)
