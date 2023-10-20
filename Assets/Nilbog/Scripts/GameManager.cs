@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
@@ -14,5 +15,10 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
+    }
+
+    public void SceneLoad() 
+    {
+        SceneManager.LoadScene(1);
     }
 }

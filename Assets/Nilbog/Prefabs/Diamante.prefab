@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &147663671622992072
+--- !u!1 &7927643337091870122
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3829613582514522006}
-  - component: {fileID: 7295252067069384142}
-  - component: {fileID: 3556740549454694121}
-  - component: {fileID: 7499637002105972090}
-  - component: {fileID: 2460133587068048051}
+  - component: {fileID: 1899238178306281667}
+  - component: {fileID: 5514971698453965176}
+  - component: {fileID: 2712721256380918986}
+  - component: {fileID: 4799664290701151160}
   m_Layer: 0
-  m_Name: Torta
+  m_Name: Diamante
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &3829613582514522006
+  m_IsActive: 1
+--- !u!4 &1899238178306281667
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147663671622992072}
-  m_LocalRotation: {x: -0.8438142, y: 0.08909578, z: -0.14796963, w: 0.5080793}
-  m_LocalPosition: {x: -2.38, y: 2.83, z: 9.68}
-  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_GameObject: {fileID: 7927643337091870122}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 1.75, y: 0.39, z: 17.64}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -56.21, y: 142.28, z: -147.267}
---- !u!33 &7295252067069384142
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5514971698453965176
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147663671622992072}
-  m_Mesh: {fileID: -8255880965356393855, guid: 99e01152d57e51a4590f977f51478787, type: 3}
---- !u!23 &3556740549454694121
+  m_GameObject: {fileID: 7927643337091870122}
+  m_Mesh: {fileID: -2624971872819185733, guid: 3e437ab0016710949831756fa01da3de, type: 3}
+--- !u!23 &2712721256380918986
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147663671622992072}
+  m_GameObject: {fileID: 7927643337091870122}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6751132818839481210, guid: 99e01152d57e51a4590f977f51478787, type: 3}
+  - {fileID: 2100000, guid: 53078ba811d2d544890f316d271bdc6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,13 +84,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7499637002105972090
+--- !u!65 &4799664290701151160
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147663671622992072}
+  m_GameObject: {fileID: 7927643337091870122}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -104,23 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.025230272, y: 0.02578681, z: 0.007522564}
-  m_Center: {x: 0, y: 0, z: 0.0010610644}
---- !u!114 &2460133587068048051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147663671622992072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4696c8ec1ac283409f00779ec1adce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objSettings: {fileID: 11400000, guid: 1c91ab5b204ef0c4a9d3cb1bd3d37f99, type: 2}
-  _input:
-  - {fileID: 0}
-  - {fileID: 0}
-  _output: {fileID: 0}
-  _status: 0
+  m_Size: {x: 0.02, y: 0.019999996, z: 0.013009675}
+  m_Center: {x: 0, y: 0, z: -0.0024043184}

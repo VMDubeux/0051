@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d8ed5e7183c1d43848d16598eb0430, type: 3}
   m_Name: Passaro
   m_EditorClassIdentifier: 
-  Name: Passaro
   Sprite: {fileID: 21300000, guid: f9149d3a48cb1bd4785a1a753d05fc62, type: 3}
-  Prefab: {fileID: 3903475793856665473, guid: b94432cde40762343a7180c990df476c, type: 3}
+  Prefab: {fileID: 5547718632413448977, guid: 32a5c0b9f2a5cac43a40aa290e2edf0c, type: 3}

@@ -13,12 +13,12 @@ public class ObjController : MonoBehaviour
 
     [Header("Inputs and Outputs: ")]
     [SerializeField] private ObjController[] _input;
-    [SerializeField] private ObjController _output;
+    [SerializeField] private ObjController[] _output;
     [SerializeField] private bool _status;
 
-    [Header("Materials: ")]
-    public Material ClickedObjectMaterial;
- 
+    //[Header("Materials: ")]
+    //public Material ClickedObjectMaterial;
+
     private void Active()
     {
         if (_input.Length > 0)
@@ -35,14 +35,25 @@ public class ObjController : MonoBehaviour
 
         _status = true;
 
-        if (_output != null && _status)
-            _output.Connect();
+        if (_output.Length > 0 && _status)
+        {
+            for (int i = 0; i < _output.Length; i++)
+            {
+                _output[i].Connect();
+            }
+
+            if (CompareTag("Over")) gameObject.SetActive(false);
+        }
+        else if (CompareTag("ObjetoFinal") && _status) 
+        {
+            Debug.Log("Fim da atual cena");
+            //GameManager.Instance.SceneLoad();
+        }
     }
 
     private void OnMouseDown()
     {
         Active();
-        //gameObject.SetActive(false);
         Inventory.Instance.AddImage(_objSettings.Sprite);
     }
 
@@ -53,10 +64,14 @@ public class ObjController : MonoBehaviour
 
     private void Connect()
     {
-
         gameObject.SetActive(true);
 
         if (_output != null && _status)
-            _output.Connect();
+        {
+            for (int i = 0; i < _output.Length; i++)
+            {
+                _output[i].Connect();
+            }
+        }
     }
 }
