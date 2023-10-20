@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Build;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ObjController : MonoBehaviour
 {
@@ -12,9 +16,25 @@ public class ObjController : MonoBehaviour
     [SerializeField] private ObjController _output;
     [SerializeField] private bool _status;
 
+    [Header("Materials: ")]
+    public Material ClickedObjectMaterial;
+ 
     private void Active()
     {
+        if (_input.Length > 0)
+        {
+            for (int i = 0; i < _input.Length; i++)
+            {
+                if (_input[i]._status == false)
+                {
+                    _status = false;
+                    return;
+                }
+            }
+        }
+
         _status = true;
+
         if (_output != null && _status)
             _output.Connect();
     }
@@ -26,16 +46,13 @@ public class ObjController : MonoBehaviour
         Inventory.Instance.AddImage(_objSettings.Sprite);
     }
 
+    private void OnMouseExit()
+    {
+        //NotClicked = GetComponent<MeshRenderer>().material;
+    }
+
     private void Connect()
     {
-        for (int i = 0; i < _input.Length; i++)
-        {
-            if (_input[i]._status == false)
-            {
-                _status = false;
-                return;
-            }
-        }
 
         gameObject.SetActive(true);
 
