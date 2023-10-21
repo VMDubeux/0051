@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -5,6 +6,8 @@ using UnityEngine.UIElements;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    internal ObjController LastSelected;
+    internal ObjController CurrentSelected;
 
     private void Awake()
     {

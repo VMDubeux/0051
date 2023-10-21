@@ -1,3 +1,4 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -16,8 +17,12 @@ public class ObjController : MonoBehaviour
     [SerializeField] private ObjController[] _output;
     [SerializeField] private bool _status;
 
-    //[Header("Materials: ")]
-    //public Material ClickedObjectMaterial;
+    [Header("Incompatibilidade: ")]
+    [SerializeField] private ObjController[] _incompativeis;
+    [SerializeField] private ObjController[] _outputIncompativeis;
+
+    [Header("Teleporte: ")]
+    [SerializeField] private GameObject _TeleporteTo;
 
     private void Active()
     {
@@ -30,10 +35,14 @@ public class ObjController : MonoBehaviour
                     _status = false;
                     return;
                 }
+
+                else if (_input[i] == GameManager.Instance.LastSelected)
+                {
+                    _status = true;
+                }
             }
         }
-
-        _status = true;
+        else _status = true;
 
         if (_output.Length > 0 && _status)
         {
@@ -44,22 +53,11 @@ public class ObjController : MonoBehaviour
 
             if (CompareTag("Over")) gameObject.SetActive(false);
         }
-        else if (CompareTag("ObjetoFinal") && _status) 
+        else if (CompareTag("ObjetoFinal") && _status)
         {
             Debug.Log("Fim da atual cena");
             //GameManager.Instance.SceneLoad();
         }
-    }
-
-    private void OnMouseDown()
-    {
-        Active();
-        Inventory.Instance.AddImage(_objSettings.Sprite);
-    }
-
-    private void OnMouseExit()
-    {
-        //NotClicked = GetComponent<MeshRenderer>().material;
     }
 
     private void Connect()
@@ -72,6 +70,36 @@ public class ObjController : MonoBehaviour
             {
                 _output[i].Connect();
             }
+        }
+    }
+
+    private void Compatibilidade()
+    {
+        for (int i = 0; i < _incompativeis.Length; i++)
+        {
+            if (_incompativeis[i] == GameManager.Instance.LastSelected)
+            {
+                _outputIncompativeis[i].gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        GameManager.Instance.LastSelected = GameManager.Instance.CurrentSelected;
+        GameManager.Instance.CurrentSelected = this;
+        Active();
+        Compatibilidade();
+        Teleporte();
+        Inventory.Instance.AddImage(_objSettings.Sprite);
+    }
+
+    private void Teleporte() 
+    {
+        if (_TeleporteTo != null) 
+        {
+            gameObject.transform.position = _TeleporteTo.transform.position;
+            gameObject.transform.rotation = _TeleporteTo.transform.rotation;
         }
     }
 }

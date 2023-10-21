@@ -7,6 +7,8 @@ TagManager:
   - drag
   - Over
   - ObjetoFinal
+  - NaoInterativo
+  - Interativo
   layers:
   - Default
   - TransparentFX
