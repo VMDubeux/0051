@@ -1,4 +1,5 @@
 using Microsoft.Unity.VisualStudio.Editor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -24,6 +25,8 @@ public class ObjController : MonoBehaviour
     [Header("Teleporte: ")]
     [SerializeField] private GameObject _TeleporteTo;
 
+    public Sound[] SfxSounds;
+    public GameObject[] fase;
     private void Active()
     {
         if (_input.Length > 0)
@@ -55,7 +58,10 @@ public class ObjController : MonoBehaviour
         }
         else if (CompareTag("ObjetoFinal") && _status)
         {
-            Debug.Log("Fim da atual cena");
+            
+            fase[0].SetActive(false);
+            fase[1].SetActive(true);
+
             //GameManager.Instance.SceneLoad();
         }
     }
@@ -86,6 +92,9 @@ public class ObjController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Sound s = Array.Find(AudioManager.Instance.SfxSounds, x => x.Name == "Click");
+        AudioManager.Instance.SfxSource.clip = s.Som;
+        AudioManager.Instance.SfxSource.PlayOneShot(s.Som, 1.0f);
         GameManager.Instance.LastSelected = GameManager.Instance.CurrentSelected;
         GameManager.Instance.CurrentSelected = this;
         Active();
