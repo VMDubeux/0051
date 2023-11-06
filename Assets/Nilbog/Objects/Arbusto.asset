@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d8ed5e7183c1d43848d16598eb0430, type: 3}
   m_Name: Arbusto
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 15f9cb37344504b48b096e441d288020, type: 3}
-  Prefab: {fileID: 740004878966465686, guid: 0330341578eb0304fbdd45fda0c485b2, type: 3}
+  sprite: {fileID: 21300000, guid: 15f9cb37344504b48b096e441d288020, type: 3}
+  particleEffect: []

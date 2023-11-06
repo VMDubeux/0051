@@ -6,8 +6,9 @@ using UnityEngine.UIElements;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    internal ObjController LastSelected;
-    internal ObjController CurrentSelected;
+    public ObjTeleport objTeleport;
+    internal Objects LastSelected;
+    internal Objects CurrentSelected;
 
     private void Awake()
     {
@@ -18,10 +19,5 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
-    }
-
-    public void SceneLoad() 
-    {
-        SceneManager.LoadScene(1);
     }
 }

@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    public static UIController Controller;
+    public static SettingsController Controller;
 
     [Header("AudioClips:")]
     public Sound[] MusicSounds, SfxSounds;

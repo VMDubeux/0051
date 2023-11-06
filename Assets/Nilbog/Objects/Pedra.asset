@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d8ed5e7183c1d43848d16598eb0430, type: 3}
   m_Name: Pedra
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 78b68e40961c0cc44b9cef520227ec9c, type: 3}
-  Prefab: {fileID: 3402700587736513629, guid: 2d84375bf607b4a4983d7a7de08ef148, type: 3}
+  sprite: {fileID: 21300000, guid: 78b68e40961c0cc44b9cef520227ec9c, type: 3}
+  particleEffect: []
