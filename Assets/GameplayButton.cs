@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameplayButton : Buttons
@@ -10,8 +11,8 @@ public class GameplayButton : Buttons
 
     public override void Click()
     {
-        print("Desativar");
         menu.SetActive(false);
         Time.timeScale = 1.0f;
+        base.Click();
     }
 }

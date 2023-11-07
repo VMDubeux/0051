@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Button))]
-public abstract class Buttons : MonoBehaviour
+public abstract class Buttons : MonoBehaviour, IPointerClickHandler//, IPointerUpHandler
 {
     internal Button currentButton;
 
@@ -14,10 +15,13 @@ public abstract class Buttons : MonoBehaviour
         currentButton = GetComponent<Button>();
     }
 
-    void Update()
+    public void OnPointerClick(PointerEventData data)
     {
-        currentButton.onClick.AddListener(() => ButtonsManager.OnButtonClick += Click);
+        ButtonsManager.OnButtonClick += Click;
     }
 
-    public abstract void Click();
+    public virtual void Click() 
+    {
+        ButtonsManager.OnButtonClick -= Click;
+    }
 }

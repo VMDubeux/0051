@@ -7,11 +7,7 @@ public class ButtonsManager : MonoBehaviour
 
     void Update()
     {
-        OnButtonClick?.Invoke();
-    }
-
-    private void OnDestroy()
-    {
-        OnButtonClick = null;
+        if (OnButtonClick != null)
+            OnButtonClick();
     }
 }
