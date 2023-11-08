@@ -15,6 +15,7 @@ TagManager:
   - Fase 1
   - Fase 2
   - Derrota
+  - VFX
   layers:
   - Default
   - TransparentFX

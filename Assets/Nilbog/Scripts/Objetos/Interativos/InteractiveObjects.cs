@@ -17,7 +17,7 @@ public sealed class InteractiveObjects : Objects
     {
         if (objInput.Length > 0)
         {
-            for (int i = 0; i < objInput.Length; i++)
+            for (sbyte i = 0; i < objInput.Length; i++)
             {
                 if (objInput[i].status == false)
                 {
@@ -35,7 +35,7 @@ public sealed class InteractiveObjects : Objects
 
         if (objOutput.Length > 0 && status)
         {
-            for (int i = 0; i < objOutput.Length; i++)
+            for (sbyte i = 0; i < objOutput.Length; i++)
             {
                 objOutput[i].Connect();
             }
@@ -57,7 +57,7 @@ public sealed class InteractiveObjects : Objects
 
         if (objOutput != null && status)
         {
-            for (int i = 0; i < objOutput.Length; i++)
+            for (sbyte i = 0; i < objOutput.Length; i++)
             {
                 objOutput[i].Connect();
             }
@@ -66,12 +66,24 @@ public sealed class InteractiveObjects : Objects
 
     public override void Compatibilidade()
     {
-        for (int i = 0; i < objIncompativel.Length; i++)
+        for (sbyte i = 0; i < objIncompativel.Length; i++)
         {
-            if (objIncompativel[i] == GameManager.Instance.LastSelected)
+            for (sbyte j = 0; j < outputIncompativeis.Length; j++)
             {
-                outputIncompativeis[i].gameObject.SetActive(true);
-                if (outputIncompativeis[i].CompareTag("Derrota")) Time.timeScale = 0.0f;
+                if (i == j &&
+                    objIncompativel[i].status == false &&
+                    objIncompativel[i] == GameManager.Instance.LastSelected)
+                {
+                    outputIncompativeis[i].gameObject.SetActive(true);
+
+                    if (outputIncompativeis[i].CompareTag("VFX"))
+                        Instantiate(outputIncompativeis[i],
+                            transform.position,
+                            outputIncompativeis[i].transform.rotation);
+
+                    else if (outputIncompativeis[i].CompareTag("Derrota"))
+                        Time.timeScale = 0.0f;
+                }
             }
         }
     }
@@ -89,7 +101,5 @@ public sealed class InteractiveObjects : Objects
         Active();
         Compatibilidade();
         Inventory.Instance.AddImage(objInfo.sprite);
-        if (gameObject.GetComponent<ObjTeleport>() != null)
-            GameManager.Instance.objTeleport.Teleporte();
     }
 }

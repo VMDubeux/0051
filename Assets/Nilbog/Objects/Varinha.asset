@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: e88d5afb5cab4a94f871a678530289e8, type: 3}
   particleEffect: []
+  animation:
+  - {fileID: 0}

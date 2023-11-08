@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class GameplayButton : Buttons
@@ -13,6 +11,7 @@ public class GameplayButton : Buttons
     {
         menu.SetActive(false);
         Time.timeScale = 1.0f;
+        EditorSceneManager.LoadScene(1);
         base.Click();
     }
 }
