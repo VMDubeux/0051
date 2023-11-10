@@ -25,4 +25,14 @@ public abstract class Objects : MonoBehaviour
     public abstract void Compatibilidade();
 
     public abstract void OnMouseDown();
+
+    public void OnGameStateChanged(GameState newGameState) 
+    {
+        enabled = newGameState == GameState.Gameplay;
+    }
+
+    public void OnDestroy()
+    {
+        GameStateManager.Instace.OnGameStateChanged -= OnGameStateChanged;
+    }
 }

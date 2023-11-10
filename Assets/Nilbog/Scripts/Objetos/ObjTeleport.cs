@@ -5,6 +5,14 @@ public class ObjTeleport : MonoBehaviour
     [Header("Teleporte: ")]
     [SerializeField] private GameObject _TeleporteTo;
 
+    [Header("Variável de posição: ")]
+    [SerializeField]
+    private Vector3 newPosition;
+
+    [Header("Variável de rotação: ")]
+    [SerializeField]
+    private Quaternion newRotation;
+
     void Update()
     {
         if (_TeleporteTo != null &&
@@ -13,6 +21,6 @@ public class ObjTeleport : MonoBehaviour
     }
 
     public void Teleporte() => gameObject.transform.SetPositionAndRotation
-        (_TeleporteTo.transform.position + new Vector3(0, 0.25f, 0),
-        Quaternion.Euler(-90, 0, 0));
+        (_TeleporteTo.transform.position + newPosition,
+        newRotation);
 }

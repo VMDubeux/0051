@@ -44,10 +44,7 @@ public sealed class InteractiveObjects : Objects
         }
         else if (CompareTag("ObjetoFinal") && status)
         {
-
-            //GameManager.Instance.SceneLoad();
-
-            //GameManager.Instance.SceneLoad();
+            SceneManager.OnLevel += SceneManager.Instance.VictoryChangeScene;
         }
     }
 
@@ -82,7 +79,21 @@ public sealed class InteractiveObjects : Objects
                             outputIncompativeis[i].transform.rotation);
 
                     else if (outputIncompativeis[i].CompareTag("Derrota"))
-                        Time.timeScale = 0.0f;
+                        GameStateManager.Instace.OnGameStateChanged += OnGameStateChanged;
+                }
+                else if (i == j &&
+                    objIncompativel[i].status == true &&
+                    objIncompativel[i] == GameManager.Instance.LastSelected)
+                {
+                    outputIncompativeis[i].gameObject.SetActive(true);
+
+                    if (outputIncompativeis[i].CompareTag("VFX"))
+                        Instantiate(outputIncompativeis[i],
+                            transform.position,
+                            outputIncompativeis[i].transform.rotation);
+
+                    else if (outputIncompativeis[i].CompareTag("Derrota"))
+                        GameStateManager.Instace.OnGameStateChanged += OnGameStateChanged;
                 }
             }
         }
