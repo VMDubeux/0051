@@ -1,5 +1,8 @@
-using UnityEditor.SceneManagement;
 using UnityEngine;
+
+#if UNITY_EDITOR
+using UnityEditor.SceneManagement;
+#endif
 
 public class GameplayButton : Buttons
 {
@@ -11,7 +14,11 @@ public class GameplayButton : Buttons
     {
         menu.SetActive(false);
         Time.timeScale = 1.0f;
+
+#if UNITY_EDITOR
         EditorSceneManager.LoadScene(1);
+#endif
+
         base.Click();
     }
 }

@@ -1,21 +1,21 @@
 using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.UIElements;
+
+#if UNITY_EDITOR
+using UnityEditor.SceneManagement;
+#endif
 
 public class SceneManager : MonoBehaviour
 {
     public static SceneManager Instance;
-    private static sbyte contadorInstanciaçoes = 1;
+    private static sbyte contadorInstancias = 1;
 
     [SerializeField]
     private sbyte sceneIndex;
 
     public delegate void Level();
     public static event Level OnLevel;
-
 
     void Awake()
     {
@@ -36,9 +36,11 @@ public class SceneManager : MonoBehaviour
 
     public void VictoryChangeScene()
     {
-        sceneIndex = ++contadorInstanciaçoes;
+        sceneIndex = ++contadorInstancias;
         StartCoroutine(WaitTime());
+#if UNITY_EDITOR
         EditorSceneManager.LoadScene(sceneIndex);
+#endif
         OnLevel -= VictoryChangeScene;
     }
 
@@ -49,10 +51,12 @@ public class SceneManager : MonoBehaviour
 
     IEnumerator WaitTime()
     {
-        sceneIndex = contadorInstanciaçoes;
+        sceneIndex = contadorInstancias;
         GameStatus();
         yield return new WaitForSeconds(5);
-        EditorSceneManager.LoadScene(contadorInstanciaçoes);
+#if UNITY_EDITOR
+        EditorSceneManager.LoadScene(contadorInstancias);
+#endif
         OnLevel -= DefeatReloadScene;
     }
 

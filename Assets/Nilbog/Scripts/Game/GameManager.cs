@@ -1,4 +1,7 @@
+#if UNITY_EDITOR
 using UnityEditor.SceneManagement;
+#endif
+
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
