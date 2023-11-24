@@ -33,16 +33,16 @@ public sealed class InteractiveObjects : Objects
         }
         else status = true;
 
-        if (objOutput.Length > 0 && status)
+        if (objOutput.Length > 0 && status == true)
         {
             for (sbyte i = 0; i < objOutput.Length; i++)
             {
                 objOutput[i].Connect();
             }
 
-            if (CompareTag("Over")) gameObject.SetActive(false);
+            if (CompareTag("DisappearObject")) gameObject.SetActive(false);
         }
-        else if (CompareTag("ObjetoFinal") && status)
+        else if (CompareTag("FinalObjectToWin") && status == true)
         {
             SceneManager.OnLevel += SceneManager.Instance.VictoryChangeScene;
         }
@@ -52,7 +52,7 @@ public sealed class InteractiveObjects : Objects
     {
         gameObject.SetActive(true);
 
-        if (objOutput != null && status)
+        if (objOutput != null && status == true)
         {
             for (sbyte i = 0; i < objOutput.Length; i++)
             {
@@ -67,36 +67,37 @@ public sealed class InteractiveObjects : Objects
         {
             for (sbyte j = 0; j < outputIncompativeis.Length; j++)
             {
-                if (i == j &&
-                    objIncompativel[i].status == false &&
-                    objIncompativel[i] == GameManager.Instance.LastSelected)
+                if (i == j)
                 {
-                    outputIncompativeis[i].gameObject.SetActive(true);
+                    if (objIncompativel[i] == GameManager.Instance.LastSelected
+                        && objIncompativel[i].CompareTag("NoInteraction")
+                        && objIncompativel[i].status == false)
+                    {
+                        AnaliseCompatibilidade(i, j);
+                    }
 
-                    if (outputIncompativeis[i].CompareTag("VFX"))
-                        Instantiate(outputIncompativeis[i],
-                            transform.position,
-                            outputIncompativeis[i].transform.rotation);
-
-                    else if (outputIncompativeis[i].CompareTag("Derrota"))
-                        GameStateManager.Instace.OnGameStateChanged += OnGameStateChanged;
-                }
-                else if (i == j &&
-                    objIncompativel[i].status == true &&
-                    objIncompativel[i] == GameManager.Instance.LastSelected)
-                {
-                    outputIncompativeis[i].gameObject.SetActive(true);
-
-                    if (outputIncompativeis[i].CompareTag("VFX"))
-                        Instantiate(outputIncompativeis[i],
-                            transform.position,
-                            outputIncompativeis[i].transform.rotation);
-
-                    else if (outputIncompativeis[i].CompareTag("Derrota"))
-                        GameStateManager.Instace.OnGameStateChanged += OnGameStateChanged;
+                    else if (objIncompativel[i] == GameManager.Instance.LastSelected
+                        && !objIncompativel[i].CompareTag("NoInteraction")
+                        && objIncompativel[i].status == true)
+                    {
+                        AnaliseCompatibilidade(i, j);
+                    }
                 }
             }
         }
+    }
+
+    private void AnaliseCompatibilidade(sbyte i, sbyte j)
+    {
+        outputIncompativeis[j].gameObject.SetActive(true);
+
+        if (outputIncompativeis[j].CompareTag("VFX"))
+            Instantiate(outputIncompativeis[j],
+                transform.position,
+                outputIncompativeis[j].transform.rotation);
+
+        else if (outputIncompativeis[i].CompareTag("DefeatMenu"))
+            SceneManager.OnLevel += SceneManager.Instance.DefeatReloadScene;
     }
 
     public override void OnMouseDown()

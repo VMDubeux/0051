@@ -16,6 +16,11 @@ TagManager:
   - Fase 2
   - Derrota
   - VFX
+  - DisappearObject
+  - FinalObjectToWin
+  - DefeatMenu
+  - WithInteraction
+  - NoInteraction
   layers:
   - Default
   - TransparentFX
