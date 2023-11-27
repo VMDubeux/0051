@@ -44,7 +44,7 @@ public sealed class InteractiveObjects : Objects
         }
         else if (CompareTag("FinalObjectToWin") && status == true)
         {
-            SceneManager.OnLevel += SceneManager.Instance.VictoryChangeScene;
+            SceneManaging.OnLevel += SceneManaging.Instance.VictoryChangeScene;
         }
     }
 
@@ -97,7 +97,7 @@ public sealed class InteractiveObjects : Objects
                 outputIncompativeis[j].transform.rotation);
 
         else if (outputIncompativeis[i].CompareTag("DefeatMenu"))
-            SceneManager.OnLevel += SceneManager.Instance.DefeatReloadScene;
+            SceneManaging.OnLevel += SceneManaging.Instance.DefeatReloadScene;
     }
 
     public override void OnMouseDown()

@@ -1,13 +1,9 @@
-#if UNITY_EDITOR
-using UnityEditor.SceneManagement;
-#endif
-
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public ObjTeleport objTeleport;
+    internal SceneManaging sceneManaging;
 
     internal Objects LastSelected;
     internal Objects CurrentSelected;
