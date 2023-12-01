@@ -13,12 +13,14 @@ public class SceneManaging : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null && Instance == this) 
         {
-            Destroy(this.gameObject);
-            return;
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else Destroy(gameObject);
         }
-        Instance = this;
     }
 
     void Start()
@@ -48,8 +50,11 @@ public class SceneManaging : MonoBehaviour
 
     IEnumerator WaitTime()
     {
-        OnLevel -= VictoryChangeScene;
-        OnLevel -= DefeatReloadScene;
+        if (OnLevel != null)
+        {
+            if (OnLevel == VictoryChangeScene) OnLevel -= VictoryChangeScene;
+            else OnLevel -= DefeatReloadScene;
+        }
         Debug.Log(Time.time);
         yield return new WaitForSecondsRealtime(20f);
         Debug.Log(Time.time);

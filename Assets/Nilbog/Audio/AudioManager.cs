@@ -47,26 +47,20 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            MusicSource.clip = s.Som;
+            MusicSource.clip = s.Clip;
             MusicSource.Play();
         }
     }
 
     public void PlaySFX(string Name, float Volume)
     {
-        Sound s = Array.Find(SfxSounds, x => x.Name == Name);
-        if (s == null)
-        {
-            Debug.Log("Sound Not Found");
-        }
-        else
-        {
-            SfxSource.clip = s.Som;
-            SfxSource.PlayOneShot(s.Som, Volume);
-        }
+        Sound s = Array.Find(SfxSounds, s => s.Name == Name);
+
+        SfxSource.clip = s.Clip;
+        SfxSource.PlayOneShot(s.Clip, Volume);
+
     }
 
- 
     public void ToggleMusic()
     {
         PlayerPrefs.GetInt("musicToggleValue");

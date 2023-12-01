@@ -8,7 +8,7 @@ public class OtherButtons : Buttons
 
     private void Start()
     {
-        print("Apertou");
+        print("Começou");
     }
 
     public override void Click()

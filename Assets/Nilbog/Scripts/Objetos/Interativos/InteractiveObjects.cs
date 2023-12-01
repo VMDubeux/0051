@@ -112,6 +112,6 @@ public sealed class InteractiveObjects : Objects
         GameManager.Instance.CurrentSelected = this;
         Active();
         Compatibilidade();
-        Inventory.Instance.AddImage(objInfo.sprite);
+        Inventory.instance.AddImage(objInfo.sprite);
     }
 }

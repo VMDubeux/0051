@@ -10,14 +10,19 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        UnityEngine.Rendering.DebugManager.instance.enableRuntimeUI = false;
+        Inventory.instance.AddImage(Inventory.instance.SetUpSprite);
+
+        LastSelected = null;
+        CurrentSelected = null;
+
         Time.timeScale = 1.0f;
 
-        if (Instance != null && Instance != this)
+        if (Instance == null)
         {
-            Destroy(this.gameObject);
-            return;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-
-        Instance = this;
+        else Destroy(gameObject);
     }
 }

@@ -4,18 +4,17 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     public Image Image;
+    public Sprite SetUpSprite;
+    public static Inventory instance;
 
-    public static Inventory Instance;
-
-    private void Awake()
+    void Awake()
     {
-        if (Instance != null && Instance != this) 
+        if (instance == null)
         {
-            Destroy(this.gameObject);
-            return;
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-
-        Instance = this;
+        else Destroy(gameObject);
     }
 
     public void AddImage(Sprite sprite)
