@@ -1,12 +1,10 @@
+using UnityEngine.SceneManagement;
+
 public class PlayButton : Buttons
 {
-    private void Update()
-    {
-        currentButton.onClick.AddListener(() => ButtonsManager.OnButtonClick += Click);
-    }
-
     public override void Click()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        base.Click();
     }
 }

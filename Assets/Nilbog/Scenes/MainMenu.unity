@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 57877674}
   - component: {fileID: 57877673}
   - component: {fileID: 57877672}
+  - component: {fileID: 57877675}
   m_Layer: 5
   m_Name: ButtonReturn
   m_TagString: Untagged
@@ -245,6 +246,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57877670}
   m_CullTransparentMesh: 1
+--- !u!114 &57877675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57877670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747a164f06c2a4449a1effac8bbd0d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuInactive:
+  - gameObjectMenu: {fileID: 1619119637}
+  menuActive: []
 --- !u!1 &196353101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,6 +2542,7 @@ GameObject:
   - component: {fileID: 1403574531}
   - component: {fileID: 1403574530}
   - component: {fileID: 1403574529}
+  - component: {fileID: 1403574532}
   m_Layer: 5
   m_Name: ButtonReturn
   m_TagString: Untagged
@@ -2636,6 +2653,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403574527}
   m_CullTransparentMesh: 1
+--- !u!114 &1403574532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403574527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747a164f06c2a4449a1effac8bbd0d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuInactive:
+  - gameObjectMenu: {fileID: 1239715896}
+  menuActive: []
 --- !u!1 &1513944526
 GameObject:
   m_ObjectHideFlags: 0
@@ -4098,11 +4130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747a164f06c2a4449a1effac8bbd0d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu:
-  - statusMenu: Active
-    gameObjectMenu: {fileID: 1239715896}
-  - statusMenu: Inactive
-    gameObjectMenu: {fileID: 1619119637}
+  menuInactive: []
+  menuActive:
+  - gameObjectMenu: {fileID: 1239715896}
 --- !u!1 &5573767407974783488
 GameObject:
   m_ObjectHideFlags: 0
@@ -4298,8 +4328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747a164f06c2a4449a1effac8bbd0d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu:
-  - statusMenu: Active
-    gameObjectMenu: {fileID: 1619119637}
-  - statusMenu: Inactive
-    gameObjectMenu: {fileID: 1239715896}
+  menuInactive: []
+  menuActive:
+  - gameObjectMenu: {fileID: 1619119637}
