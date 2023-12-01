@@ -3296,10 +3296,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MusicSounds:
   - Name: Theme
-    Clip: {fileID: 8300000, guid: dd0a2b1b03799c54fb01f4e565d56f6f, type: 3}
+    Clip: {fileID: 8300000, guid: 1cafea2934b0e5a4897fadd6248eff92, type: 3}
   SfxSounds:
   - Name: Click
-    Clip: {fileID: 8300000, guid: 32aba5fc9bc23754193f419db491150e, type: 3}
+    Clip: {fileID: 8300000, guid: 2e84259c3d70eaa49999026e53259f9b, type: 3}
   MusicSource: {fileID: 809016980}
   SfxSource: {fileID: 1994867565}
 --- !u!82 &1947485576

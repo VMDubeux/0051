@@ -22,6 +22,7 @@ public abstract class Buttons : MonoBehaviour, IPointerClickHandler//, IPointerU
 
     public virtual void Click() 
     {
+        AudioManager.Instance.PlaySFX("Click", 1.0f);
         ButtonsManager.OnButtonClick -= Click;
     }
 }
