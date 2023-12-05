@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     internal Objects LastSelected;
     internal Objects CurrentSelected;
 
-    private void Awake()
+    private void Start()
     {
         UnityEngine.Rendering.DebugManager.instance.enableRuntimeUI = false;
         Inventory.instance.AddImage(Inventory.instance.SetUpSprite);
@@ -18,11 +18,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1.0f;
 
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 }
