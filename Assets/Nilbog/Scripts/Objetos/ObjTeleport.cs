@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ObjTeleport : MonoBehaviour
 {
-    public static ObjTeleport instance; 
+    public static ObjTeleport instance;
 
     [Header("Teleporte: ")]
     [SerializeField] private GameObject teleporteTo;
@@ -23,14 +23,16 @@ public class ObjTeleport : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         if (teleporteTo != null &&
             teleporteTo.GetComponent<InteractiveObjects>().status)
+        {
+            animator = GetComponent<Animator>();
             Teleporte();
+        }
     }
 
     public void Teleporte()

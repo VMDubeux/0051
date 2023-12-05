@@ -9,6 +9,9 @@ public class TipsButton : Buttons
     private GameObject tipsMenu;
 
     [SerializeField]
+    private GameObject blockObject;
+
+    [SerializeField]
     private bool status = false;
 
     public override void Click()
@@ -16,11 +19,13 @@ public class TipsButton : Buttons
         if (tipsMenu != null && status == false)
         {
             tipsMenu.SetActive(true);
+            blockObject.SetActive(true);
             status = true;
         }
         else
         {
             tipsMenu.SetActive(false);
+            blockObject.SetActive(false);
             status = false;
         }
         AudioManager.Instance.PlaySFX("Dicas", 1.0f);
