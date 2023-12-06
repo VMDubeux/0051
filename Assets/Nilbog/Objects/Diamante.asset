@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d8ed5e7183c1d43848d16598eb0430, type: 3}
   m_Name: Diamante
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 1c147ea5a37abaa4094b5fc248d5b2f2, type: 3}
+  sprite: {fileID: 21300000, guid: c9107986b5730f348aac4841208b762e, type: 3}
   particleEffect: []
+  animation: []

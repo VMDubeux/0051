@@ -7,5 +7,5 @@ public class ObjInfo : ScriptableObject
 {
     public Sprite sprite;
     public List<ParticleSystem> particleEffect = new List<ParticleSystem>();
-    public List<Animation> animation = new List<Animation>();
+    //public List<Animation> animation = new List<Animation>();
 }

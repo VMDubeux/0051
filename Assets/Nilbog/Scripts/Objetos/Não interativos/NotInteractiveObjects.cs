@@ -6,7 +6,7 @@ public class NotInteractiveObjects : Objects
 {
     private void Start()
     {
-        RemoveObject();
+        
     }
 
     public NotInteractiveObjects()
@@ -32,10 +32,5 @@ public class NotInteractiveObjects : Objects
     public override void OnMouseDown()
     {
         throw new System.NotImplementedException();
-    }
-
-    public void RemoveObject()
-    {
-        if (CompareTag("VFX")) Destroy(gameObject, 2.0f);
     }
 }
