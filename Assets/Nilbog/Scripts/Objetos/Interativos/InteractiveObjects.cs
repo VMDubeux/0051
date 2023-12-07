@@ -15,36 +15,65 @@ public sealed class InteractiveObjects : Objects
 
     public override void Active()
     {
-        if (objInput.Length > 0)
+        Input();
+        Output();
+    }
+
+    private void Input() 
+    {
+        switch (objInput.Length)
         {
-            for (sbyte i = 0; i < objInput.Length; i++)
-            {
-                if (objInput[i].status == false)
+            case > 0:
                 {
-                    status = false;
-                    return;
+                    for (sbyte i = 0; i < objInput.Length; i++)
+                    {
+                        if (objInput[i].status == false)
+                        {
+                            status = false;
+                            return;
+                        }
+
+                        else if (objInput[i] == GameManager.Instance.LastSelected)
+                        {
+                            status = true;
+                        }
+                    }
+
+                    break;
                 }
 
-                else if (objInput[i] == GameManager.Instance.LastSelected)
+            default:
+                status = true;
+                break;
+        }
+    }
+
+    private void Output()
+    {
+        switch (objOutput.Length)
+        {
+            case > 0 when status == true:
                 {
-                    status = true;
+                    for (sbyte i = 0; i < objOutput.Length; i++)
+                    {
+                        objOutput[i].Connect();
+                        if (objOutput[i].GetComponent<Animator>() != null)
+                        {
+
+                        }
+                    }
+
+                    if (CompareTag("DisappearObject")) gameObject.SetActive(false);
+                    break;
                 }
-            }
-        }
-        else status = true;
 
-        if (objOutput.Length > 0 && status == true)
-        {
-            for (sbyte i = 0; i < objOutput.Length; i++)
-            {
-                objOutput[i].Connect();
-            }
+            default:
+                if (CompareTag("FinalObjectToWin") && status == true)
+                {
+                    SceneManaging.OnLevel += SceneManaging.Instance.VictoryChangeScene;
+                }
 
-            if (CompareTag("DisappearObject")) gameObject.SetActive(false);
-        }
-        else if (CompareTag("FinalObjectToWin") && status == true)
-        {
-            SceneManaging.OnLevel += SceneManaging.Instance.VictoryChangeScene;
+                break;
         }
     }
 
