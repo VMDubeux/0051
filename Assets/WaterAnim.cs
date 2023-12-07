@@ -8,8 +8,6 @@ public class WaterAnim : MonoBehaviour
 
     private Animator anim;
 
-    //private InteractiveObjects interactiveObjects;
-
     void Start()
     {
         anim = GetComponent<Animator>();
