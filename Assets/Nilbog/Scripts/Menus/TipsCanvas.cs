@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TipsCanvas : MonoBehaviour
 {
-    private bool isOpen = false;
+    /*private bool isOpen = false;
 
     public void ManageTipsCanvas()
     {
@@ -18,5 +18,5 @@ public class TipsCanvas : MonoBehaviour
             gameObject.SetActive(false);
             isOpen = false;
         }
-    }
+    }*/
 }

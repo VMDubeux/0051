@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d8ed5e7183c1d43848d16598eb0430, type: 3}
   m_Name: "Ma\xE7aEnvenenada"
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 363704202d1d563408065269a84b60d8, type: 3}
+  sprite: {fileID: 21300000, guid: 24fc422cbf38eb7499be9c1d949eaadd, type: 3}
   particleEffect: []
