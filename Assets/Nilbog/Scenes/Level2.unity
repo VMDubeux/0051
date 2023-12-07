@@ -2022,7 +2022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &455630159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9203,7 +9203,7 @@ MonoBehaviour:
   - {fileID: 4344255742850393875}
   objOutput:
   - {fileID: 7675503144650761053}
-  - {fileID: 9153421867525073003}
+  - {fileID: 7054888888094214772}
   objIncompativel: []
   outputIncompativeis: []
   status: 0
@@ -10741,30 +10741,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MusicSounds:
   - Name: Theme
-    Clip: {fileID: 8300000, guid: 44fc36222444fea49bdf9c0e8bde7509, type: 3}
+    Clip: {fileID: 8300000, guid: 2e36d99ec4041f449aaa763cf03e0337, type: 3}
   SfxSounds:
   - Name: Click
     Clip: {fileID: 8300000, guid: 2e84259c3d70eaa49999026e53259f9b, type: 3}
   - Name: Dicas
     Clip: {fileID: 8300000, guid: 1a3c548e16d85e74f8219067e375ad31, type: 3}
-  - Name: Arbusto
+  - Name: Guerreiro
     Clip: {fileID: 8300000, guid: 5704837f0cb1ae641a7e95d7780e732b, type: 3}
-  - Name: Varinha
-    Clip: {fileID: 8300000, guid: e49b456e370e51c499a6209bfebc0d30, type: 3}
-  - Name: Passaro
-    Clip: {fileID: 8300000, guid: 718dc898734f4ed4e8b78648cce1e0f3, type: 3}
-  - Name: Guano
-    Clip: {fileID: 0}
+  - Name: Estalactite
+    Clip: {fileID: 8300000, guid: adf0ef329f776084193e56a090d812df, type: 3}
+  - Name: Vidro
+    Clip: {fileID: 8300000, guid: 9d5e25c2c7114084fb8d817d65ec3187, type: 3}
   - Name: Pedra
     Clip: {fileID: 8300000, guid: 7129b38446c35a74fb901b066128fe7d, type: 3}
-  - Name: Morcegos
+  - Name: Sol
     Clip: {fileID: 8300000, guid: 6ccf221eed4ad4643850241765bc3dcd, type: 3}
-  - Name: Diamante
-    Clip: {fileID: 0}
-  - Name: GoblinFeliz
-    Clip: {fileID: 8300000, guid: 06b5a6f977b6a6c419ad6275c203a354, type: 3}
-  - Name: GoblinTriste
+  - Name: Carangueijo
+    Clip: {fileID: 8300000, guid: 7c3ce2b3c8bbfba4d847f4d728fbd043, type: 3}
+  - Name: Mascara
+    Clip: {fileID: 8300000, guid: 08253c62b90ffac45bfb178d373acb60, type: 3}
+  - Name: GuerreiroTriste
     Clip: {fileID: 8300000, guid: 228a0cd67e041f343934c060d04e3189, type: 3}
+  - Name: GuerreiroFeliz
+    Clip: {fileID: 8300000, guid: 06b5a6f977b6a6c419ad6275c203a354, type: 3}
   - Name: "Vit\xF3ria"
     Clip: {fileID: 8300000, guid: cc07db5520ec32e4b9b7741e3bbd5ac3, type: 3}
   - Name: Derrota
@@ -14063,7 +14063,7 @@ GameObject:
   - component: {fileID: 7054888888094214772}
   m_Layer: 0
   m_Name: Pedra
-  m_TagString: Interativo
+  m_TagString: WithInteraction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14610,8 +14610,12 @@ MonoBehaviour:
   objInfo: {fileID: 11400000, guid: 1b13e67e525f1bf438abf82440de944d, type: 2}
   objInput: []
   objOutput: []
-  objIncompativel: []
-  outputIncompativeis: []
+  objIncompativel:
+  - {fileID: 7567305999950516872}
+  - {fileID: 7054888888094214772}
+  outputIncompativeis:
+  - {fileID: 350178540}
+  - {fileID: 350178540}
   status: 0
 --- !u!114 &4344255742850393876
 MonoBehaviour:
@@ -20997,11 +21001,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objInfo: {fileID: 11400000, guid: 3e3667fa85f022c43b1bd399c8579f15, type: 2}
-  objInput:
-  - {fileID: 1074411598}
+  objInput: []
   objOutput: []
-  objIncompativel: []
-  outputIncompativeis: []
+  objIncompativel:
+  - {fileID: 4344255742850393875}
+  - {fileID: 8985154661444133118}
+  - {fileID: 9050617877210694069}
+  - {fileID: 7567305999950516872}
+  outputIncompativeis:
+  - {fileID: 350178540}
+  - {fileID: 350178540}
+  - {fileID: 350178540}
+  - {fileID: 350178540}
   status: 0
 --- !u!4 &7082444275505927860
 Transform:
@@ -21332,8 +21343,12 @@ MonoBehaviour:
   - {fileID: 8765508702639667620}
   objOutput:
   - {fileID: 9050617877210694069}
-  objIncompativel: []
-  outputIncompativeis: []
+  objIncompativel:
+  - {fileID: 7054888888094214772}
+  - {fileID: 4344255742850393875}
+  outputIncompativeis:
+  - {fileID: 350178540}
+  - {fileID: 350178540}
   status: 0
 --- !u!95 &7567305999950516873
 Animator:
@@ -21586,7 +21601,6 @@ GameObject:
   - component: {fileID: 4813459652735553525}
   - component: {fileID: 9153421867525073001}
   - component: {fileID: 9153421867525073002}
-  - component: {fileID: 9153421867525073003}
   - component: {fileID: 9153421867525073004}
   - component: {fileID: 9153421867525073005}
   m_Layer: 0
@@ -22234,8 +22248,10 @@ MonoBehaviour:
   objInput:
   - {fileID: 7054888888094214772}
   objOutput: []
-  objIncompativel: []
-  outputIncompativeis: []
+  objIncompativel:
+  - {fileID: 1074411598}
+  outputIncompativeis:
+  - {fileID: 6282321926059667127, guid: 3ab12b72b219e9a4abb6bf8a129ee844, type: 3}
   status: 0
 --- !u!65 &8765508702639667621
 BoxCollider:
@@ -22679,24 +22695,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010000007, y: 0.007961572, z: 0.005514443}
   m_Center: {x: -0.0000000038085535, y: -0.0050433227, z: 0.0011189347}
---- !u!114 &9153421867525073003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7757961059225573689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f9c533f94eb46c4aafb54fc9e9f84a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objInfo: {fileID: 11400000, guid: 7dbe69f0750f82043b18c317d16d27cf, type: 2}
-  objInput: []
-  objOutput: []
-  objIncompativel: []
-  outputIncompativeis: []
-  status: 0
 --- !u!95 &9153421867525073004
 Animator:
   serializedVersion: 5

@@ -131,7 +131,7 @@ public sealed class InteractiveObjects : Objects
 
     public override void OnMouseDown()
     {
-        AudioManager.Instance.PlaySFX("Click", 1.0f);
+        AudioManager.Instance.PlaySFX(gameObject.name, 1.0f);
         GameManager.Instance.LastSelected = GameManager.Instance.CurrentSelected;
         GameManager.Instance.CurrentSelected = this;
         Active();

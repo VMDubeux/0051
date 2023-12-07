@@ -20,7 +20,7 @@ public class WaterAnim : MonoBehaviour
             if (sun.activeSelf)
             {
                 anim.SetBool("Descendo", true);
-                GetComponent<InteractiveObjects>().status = true;
+                //GetComponent<InteractiveObjects>().status = true;
             }
         }
     }
