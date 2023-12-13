@@ -60,32 +60,20 @@ public class SceneManaging : MonoBehaviour
 
     public void VictoryChangeScene()
     {
-        int sceneIndex = scene.buildIndex + 1;
-        StartCoroutine(WaitTime());
-        SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+        StartCoroutine(GoToScene(scene.buildIndex + 1));
     }
 
     public void VictoryChangeSceneToMainMenu()
     {
-        int sceneIndex = 0;
-        StartCoroutine(WaitTime());
-        SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+        StartCoroutine(GoToScene(0));
     }
 
     public void DefeatReloadScene()
     {
-        VoltarCena();
-        int sceneIndex = scene.buildIndex;
-        StartCoroutine(WaitTime());
-        SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+        StartCoroutine(GoToScene(scene.buildIndex));
     }
 
-    public void VoltarCena()
-    {
-        Inventory.instance.AddImage(image);
-    }
-
-    IEnumerator WaitTime()
+    IEnumerator GoToScene(int targetScene)
     {
         if (OnLevel != null)
         {
@@ -93,6 +81,8 @@ public class SceneManaging : MonoBehaviour
             else if (OnLevel == VictoryChangeSceneToMainMenu) OnLevel -= VictoryChangeSceneToMainMenu;
             else OnLevel -= DefeatReloadScene;
         }
-        yield return null;
+
+        yield return new WaitForSeconds(10f);
+        SceneManager.LoadScene(targetScene, LoadSceneMode.Single);
     }
 }
