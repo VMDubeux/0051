@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     internal Objects CurrentSelected;
 
     private int scene;
-    private int actualScene;
+    internal int actualScene;
 
     public static int Count;
     public int numb;

@@ -7,11 +7,17 @@ public class GameplayButton : Buttons
     [SerializeField]
     private GameObject menu;
 
+    private int sceneNumber;
+
+    private void Start()
+    {
+        sceneNumber = GameManager.Instance.actualScene;
+    }
+
     public override void Click()
     {
         menu.SetActive(false);
-        Time.timeScale = 1.0f;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(sceneNumber, LoadSceneMode.Single);
 
         base.Click();
     }
