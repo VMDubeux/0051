@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour//, IPointerClickHandler
+public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     internal SceneManaging sceneManaging;
@@ -20,16 +20,12 @@ public class GameManager : MonoBehaviour//, IPointerClickHandler
 
     internal GameObject TipsCanvas;
 
-    //public GameObject DefeatMenu;
+    //private Canvas Derrota;
+    public Sprite Image;
 
     private void Start()
     {
         UnityEngine.Rendering.DebugManager.instance.enableRuntimeUI = false;
-
-        //CurrentSelected = null;
-        //LastSelected = null;
-
-        //Inventory.instance.AddImage();
 
         actualScene = SceneManaging.Instance.scene.buildIndex;
 
@@ -60,7 +56,6 @@ public class GameManager : MonoBehaviour//, IPointerClickHandler
                     t.SetActive(false);
                 }
                 GameObject.FindWithTag("ButtonHelpCanvas").GetComponent<TipsButton>().status = false;
-                //GameObject.FindWithTag("InventoryImage").GetComponent<Image>().sprite = Inventory.instance.SetUpSprite;
                 CurrentSelected = null;
                 LastSelected = null;
             }
@@ -72,27 +67,14 @@ public class GameManager : MonoBehaviour//, IPointerClickHandler
         Instance = this;
         gameObject.tag = "GameManager";
         scene = SceneManaging.Instance.scene.buildIndex;
-        //GameObject.FindWithTag("InventoryImage").GetComponent<Image>().sprite = Inventory.instance.SetUpSprite;
         DontDestroyOnLoad(gameObject);
         LastSelected = null;
         CurrentSelected = null;
     }
 
-    /*public void Update()
+    private void Update()
     {
-        if (!GameObject.FindGameObjectWithTag("DefeatMenu"))
-            Inventory.instance.AddImage(CurrentSelected.GetComponent<InteractiveObjects>().objInfo.sprite);
-        else
-            Inventory.instance.AddImage(CurrentSelected.GetComponent<InteractiveObjects>().objInfo.sprite_2);
-    }*/
-
-    public void ChangeImageCanvas()
-    {
-        if (GameObject.FindGameObjectWithTag("DefeatMenu"))
-            GameObject.FindGameObjectWithTag("InventoryImage").GetComponent<Image>().sprite =
-                CurrentSelected.GetComponent<InteractiveObjects>().objInfo.sprite_2;
-        if (!GameObject.FindGameObjectWithTag("DefeatMenu"))
-            GameObject.FindGameObjectWithTag("InventoryImage").GetComponent<Image>().sprite =
-                CurrentSelected.GetComponent<InteractiveObjects>().objInfo.sprite;
+        if (FindObjectOfType<Canvas>().CompareTag("DefeatMenu"))
+            Inventory.instance.AddImage(Image);
     }
 }

@@ -12,10 +12,39 @@ public class SceneManaging : MonoBehaviour
 
     internal Scene scene;
 
+    private int sceneNumber;
+    private int actualScene;
+
+    public Sprite image;
+
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        actualScene = scene.buildIndex;
+
+        if (Instance == null)
+        {
+            InstanceBasics();
+        }
+        else
+        {
+            if (actualScene != sceneNumber)
+            {
+                Destroy(GameObject.FindWithTag("SceneManaging"));
+                InstanceBasics();
+            }
+            else if (!CompareTag("SceneManaging"))
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private void InstanceBasics()
+    {
+        Instance = this;
+        gameObject.tag = "SceneManaging";
+        sceneNumber = scene.buildIndex;
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -45,11 +74,15 @@ public class SceneManaging : MonoBehaviour
 
     public void DefeatReloadScene()
     {
+        VoltarCena();
         int sceneIndex = scene.buildIndex;
         StartCoroutine(WaitTime());
-        GameObject.FindGameObjectWithTag("InventoryImage").GetComponent<Image>().sprite =
-            GameManager.Instance.CurrentSelected.GetComponent<InteractiveObjects>().objInfo.sprite_2;
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+    }
+
+    public void VoltarCena()
+    {
+        Inventory.instance.AddImage(image);
     }
 
     IEnumerator WaitTime()

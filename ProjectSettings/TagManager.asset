@@ -26,6 +26,7 @@ TagManager:
   - GameManager
   - ButtonHelpCanvas
   - FinalObjectToWinTheGame
+  - SceneManaging
   layers:
   - Default
   - TransparentFX

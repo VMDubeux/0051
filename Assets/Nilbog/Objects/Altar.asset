@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Altar
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 1be5c80fcb6dcbf42af7ef86bd3af9de, type: 3}
-  sprite_2: {fileID: 0}
+  sprite_2: {fileID: 21300000, guid: a2145c02c116343438e4f26bb925b411, type: 3}
   particleEffect: []

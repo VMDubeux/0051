@@ -99,7 +99,7 @@ public sealed class InteractiveObjects : Objects
                 {
                     SceneManaging.OnLevel += SceneManaging.Instance.VictoryChangeScene;
                 }
-                else if (CompareTag("FinalObjectToWinTheGame") && status == true) 
+                else if (CompareTag("FinalObjectToWinTheGame") && status == true)
                 {
                     SceneManaging.OnLevel += SceneManaging.Instance.VictoryChangeSceneToMainMenu;
                 }
@@ -158,18 +158,27 @@ public sealed class InteractiveObjects : Objects
 
         else if (outputIncompativeis[i].CompareTag("DefeatMenu"))
         {
-            GameManager.Instance.ChangeImageCanvas();
             SceneManaging.OnLevel += SceneManaging.Instance.DefeatReloadScene;
         }
     }
 
     public override void OnMouseDown()
     {
+        Inventory.instance.AddImage(GetComponent<InteractiveObjects>().objInfo.sprite);
         AudioManager.Instance.PlaySFX(gameObject.name, 1.0f);
         GameManager.Instance.LastSelected = GameManager.Instance.CurrentSelected;
         GameManager.Instance.CurrentSelected = this;
-        GameManager.Instance.ChangeImageCanvas();
         Active();
         Compatibilidade();
+        ChangeImage();
     }
+
+    private void ChangeImage()
+    {
+
+
+        
+    }
+
+
 }
