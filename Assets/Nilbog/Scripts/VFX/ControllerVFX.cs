@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ControllerVFX : MonoBehaviour
 {
+
     private void Start()
     {
         if (CompareTag("VFX")) Destroy(gameObject, 2.0f);
