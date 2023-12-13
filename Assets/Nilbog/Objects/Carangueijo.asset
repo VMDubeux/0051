@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Carangueijo
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 2235452eac0d29e4393f5dd283917458, type: 3}
+  sprite_2: {fileID: 21300000, guid: a2145c02c116343438e4f26bb925b411, type: 3}
   particleEffect: []

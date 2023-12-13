@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: "Drag\xE3o"
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: f2e318d576afe5e4fa6e9daf74dd5e59, type: 3}
+  sprite_2: {fileID: 21300000, guid: a2145c02c116343438e4f26bb925b411, type: 3}
   particleEffect: []

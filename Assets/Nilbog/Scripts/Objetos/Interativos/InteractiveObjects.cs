@@ -1,13 +1,15 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public sealed class InteractiveObjects : Objects
 {
-    public InteractiveObjects(ObjInfo info, InteractiveObjects[] input, InteractiveObjects[] output, bool status, InteractiveObjects[] incompativeis, InteractiveObjects[] outputIncompativeis)
+    public InteractiveObjects(ObjInfo info, InteractiveObjects[] input, InteractiveObjects[] output, InteractiveObjects[] extra, bool status, InteractiveObjects[] incompativeis, InteractiveObjects[] outputIncompativeis)
     {
         objInfo = info;
         objInput = input;
         objOutput = output;
+        objExtraput = extra;
         this.status = status;
         this.objIncompativel = incompativeis;
         this.outputIncompativeis = outputIncompativeis;
@@ -16,10 +18,11 @@ public sealed class InteractiveObjects : Objects
     public override void Active()
     {
         Input();
+        Extraput();
         Output();
     }
 
-    private void Input() 
+    private void Input()
     {
         switch (objInput.Length)
         {
@@ -48,6 +51,30 @@ public sealed class InteractiveObjects : Objects
         }
     }
 
+    private void Extraput()
+    {
+        switch (objExtraput.Length)
+        {
+            case > 0:
+                {
+                    for (sbyte i = 0; i < objExtraput.Length; i++)
+                    {
+                        if (objExtraput[i].status == false)
+                        {
+                            status = false;
+                            return;
+                        }
+                    }
+
+                    break;
+                }
+
+            default:
+                if (objExtraput.Length > 0) status = true;
+                break;
+        }
+    }
+
     private void Output()
     {
         switch (objOutput.Length)
@@ -71,6 +98,10 @@ public sealed class InteractiveObjects : Objects
                 if (CompareTag("FinalObjectToWin") && status == true)
                 {
                     SceneManaging.OnLevel += SceneManaging.Instance.VictoryChangeScene;
+                }
+                else if (CompareTag("FinalObjectToWinTheGame") && status == true) 
+                {
+                    SceneManaging.OnLevel += SceneManaging.Instance.VictoryChangeSceneToMainMenu;
                 }
 
                 break;
@@ -126,7 +157,10 @@ public sealed class InteractiveObjects : Objects
                 outputIncompativeis[j].transform.rotation);
 
         else if (outputIncompativeis[i].CompareTag("DefeatMenu"))
+        {
+            GameManager.Instance.ChangeImageCanvas();
             SceneManaging.OnLevel += SceneManaging.Instance.DefeatReloadScene;
+        }
     }
 
     public override void OnMouseDown()
@@ -134,8 +168,8 @@ public sealed class InteractiveObjects : Objects
         AudioManager.Instance.PlaySFX(gameObject.name, 1.0f);
         GameManager.Instance.LastSelected = GameManager.Instance.CurrentSelected;
         GameManager.Instance.CurrentSelected = this;
+        GameManager.Instance.ChangeImageCanvas();
         Active();
         Compatibilidade();
-        Inventory.instance.AddImage(objInfo.sprite);
     }
 }

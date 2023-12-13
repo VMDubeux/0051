@@ -6,6 +6,6 @@ using UnityEngine;
 public class ObjInfo : ScriptableObject
 {
     public Sprite sprite;
+    public Sprite sprite_2;
     public List<ParticleSystem> particleEffect = new List<ParticleSystem>();
-    //public List<Animation> animation = new List<Animation>();
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneManaging : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class SceneManaging : MonoBehaviour
     public delegate void Level();
     public static event Level OnLevel;
 
-    private Scene scene;
+    internal Scene scene;
 
     void Awake()
     {
@@ -35,10 +36,19 @@ public class SceneManaging : MonoBehaviour
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
     }
 
+    public void VictoryChangeSceneToMainMenu()
+    {
+        int sceneIndex = 0;
+        StartCoroutine(WaitTime());
+        SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+    }
+
     public void DefeatReloadScene()
     {
         int sceneIndex = scene.buildIndex;
         StartCoroutine(WaitTime());
+        GameObject.FindGameObjectWithTag("InventoryImage").GetComponent<Image>().sprite =
+            GameManager.Instance.CurrentSelected.GetComponent<InteractiveObjects>().objInfo.sprite_2;
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
     }
 
@@ -47,11 +57,9 @@ public class SceneManaging : MonoBehaviour
         if (OnLevel != null)
         {
             if (OnLevel == VictoryChangeScene) OnLevel -= VictoryChangeScene;
+            else if (OnLevel == VictoryChangeSceneToMainMenu) OnLevel -= VictoryChangeSceneToMainMenu;
             else OnLevel -= DefeatReloadScene;
         }
-        Debug.Log(Time.time);
-        yield return new WaitForSecondsRealtime(20f);
-        Debug.Log(Time.time);
         yield return null;
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Diamante
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: c9107986b5730f348aac4841208b762e, type: 3}
+  sprite_2: {fileID: 21300000, guid: a2145c02c116343438e4f26bb925b411, type: 3}
   particleEffect: []
-  animation: []

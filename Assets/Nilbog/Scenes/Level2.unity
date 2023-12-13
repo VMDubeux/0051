@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4406292, g: 0.4891472, b: 0.5695045, a: 1}
+  m_IndirectSpecularColor: {r: 0.4431342, g: 0.4923516, b: 0.57204664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -681,7 +681,7 @@ GameObject:
   - component: {fileID: 85900889}
   m_Layer: 5
   m_Name: ButtonHelp
-  m_TagString: Untagged
+  m_TagString: ButtonHelpCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1876,6 +1876,7 @@ MonoBehaviour:
   objInfo: {fileID: 0}
   objInput: []
   objOutput: []
+  objExtraput: []
   objIncompativel: []
   outputIncompativeis: []
   status: 0
@@ -2018,7 +2019,7 @@ GameObject:
   - component: {fileID: 455630159}
   m_Layer: 5
   m_Name: Tips Canvas
-  m_TagString: DefeatMenu
+  m_TagString: TipsCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2284,7 +2285,7 @@ GameObject:
   - component: {fileID: 488522013}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2301,6 +2302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93886eb3462736a469459325fea174af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numb: 0
 --- !u!4 &488522014
 Transform:
   m_ObjectHideFlags: 0
@@ -2405,7 +2407,7 @@ GameObject:
   - component: {fileID: 550249620}
   m_Layer: 0
   m_Name: BloqueioTela
-  m_TagString: Untagged
+  m_TagString: TipsCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7949,7 +7951,7 @@ GameObject:
   - component: {fileID: 713342340}
   m_Layer: 5
   m_Name: Credits Canvas
-  m_TagString: DefeatMenu
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8764,7 +8766,7 @@ GameObject:
   - component: {fileID: 973156399}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: InventoryImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8801,7 +8803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614ca769b829f54f875b3161c2ecdf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 973156400}
   SetUpSprite: {fileID: 21300000, guid: a2145c02c116343438e4f26bb925b411, type: 3}
 --- !u!114 &973156400
 MonoBehaviour:
@@ -9204,6 +9205,7 @@ MonoBehaviour:
   objOutput:
   - {fileID: 7675503144650761053}
   - {fileID: 7054888888094214772}
+  objExtraput: []
   objIncompativel: []
   outputIncompativeis: []
   status: 0
@@ -10747,24 +10749,24 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 2e84259c3d70eaa49999026e53259f9b, type: 3}
   - Name: Dicas
     Clip: {fileID: 8300000, guid: 1a3c548e16d85e74f8219067e375ad31, type: 3}
-  - Name: Guerreiro
-    Clip: {fileID: 8300000, guid: 5704837f0cb1ae641a7e95d7780e732b, type: 3}
-  - Name: Estalactite
-    Clip: {fileID: 8300000, guid: adf0ef329f776084193e56a090d812df, type: 3}
   - Name: Vidro
     Clip: {fileID: 8300000, guid: 9d5e25c2c7114084fb8d817d65ec3187, type: 3}
+  - Name: Sol
+    Clip: {fileID: 8300000, guid: 85450fe39c628b04a947e671c465b118, type: 3}
+  - Name: Agua
+    Clip: {fileID: 8300000, guid: d5927fba4139a5d4ea413320754fe616, type: 3}
   - Name: Pedra
     Clip: {fileID: 8300000, guid: 7129b38446c35a74fb901b066128fe7d, type: 3}
-  - Name: Sol
-    Clip: {fileID: 8300000, guid: 6ccf221eed4ad4643850241765bc3dcd, type: 3}
+  - Name: Estalactite
+    Clip: {fileID: 8300000, guid: adf0ef329f776084193e56a090d812df, type: 3}
   - Name: Carangueijo
     Clip: {fileID: 8300000, guid: 7c3ce2b3c8bbfba4d847f4d728fbd043, type: 3}
   - Name: Mascara
     Clip: {fileID: 8300000, guid: 08253c62b90ffac45bfb178d373acb60, type: 3}
+  - Name: Guerreiro
+    Clip: {fileID: 8300000, guid: 06b5a6f977b6a6c419ad6275c203a354, type: 3}
   - Name: GuerreiroTriste
     Clip: {fileID: 8300000, guid: 228a0cd67e041f343934c060d04e3189, type: 3}
-  - Name: GuerreiroFeliz
-    Clip: {fileID: 8300000, guid: 06b5a6f977b6a6c419ad6275c203a354, type: 3}
   - Name: "Vit\xF3ria"
     Clip: {fileID: 8300000, guid: cc07db5520ec32e4b9b7741e3bbd5ac3, type: 3}
   - Name: Derrota
@@ -14610,6 +14612,7 @@ MonoBehaviour:
   objInfo: {fileID: 11400000, guid: 1b13e67e525f1bf438abf82440de944d, type: 2}
   objInput: []
   objOutput: []
+  objExtraput: []
   objIncompativel:
   - {fileID: 7567305999950516872}
   - {fileID: 7054888888094214772}
@@ -21003,6 +21006,7 @@ MonoBehaviour:
   objInfo: {fileID: 11400000, guid: 3e3667fa85f022c43b1bd399c8579f15, type: 2}
   objInput: []
   objOutput: []
+  objExtraput: []
   objIncompativel:
   - {fileID: 4344255742850393875}
   - {fileID: 8985154661444133118}
@@ -21343,6 +21347,7 @@ MonoBehaviour:
   - {fileID: 8765508702639667620}
   objOutput:
   - {fileID: 9050617877210694069}
+  objExtraput: []
   objIncompativel:
   - {fileID: 7054888888094214772}
   - {fileID: 4344255742850393875}
@@ -21549,6 +21554,7 @@ MonoBehaviour:
   objInfo: {fileID: 0}
   objInput: []
   objOutput: []
+  objExtraput: []
   objIncompativel: []
   outputIncompativeis: []
   status: 0
@@ -22145,7 +22151,7 @@ GameObject:
   - component: {fileID: 8985154661444133117}
   - component: {fileID: 8985154661444133118}
   m_Layer: 0
-  m_Name: Goblin
+  m_Name: Guerreiro
   m_TagString: FinalObjectToWin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22248,6 +22254,7 @@ MonoBehaviour:
   objInput:
   - {fileID: 7054888888094214772}
   objOutput: []
+  objExtraput: []
   objIncompativel:
   - {fileID: 1074411598}
   outputIncompativeis:
@@ -22509,11 +22516,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9c533f94eb46c4aafb54fc9e9f84a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objInfo: {fileID: 11400000, guid: a02a927534a83e74383a6f7da36ebba8, type: 2}
+  objInfo: {fileID: 11400000, guid: bc6ffdaaf3c3588458416ff128483bbf, type: 2}
   objInput:
   - {fileID: 7567305999950516872}
   - {fileID: 9050617877210694069}
   objOutput: []
+  objExtraput: []
   objIncompativel: []
   outputIncompativeis: []
   status: 0
@@ -22563,6 +22571,7 @@ MonoBehaviour:
   - {fileID: 7567305999950516872}
   - {fileID: 9050617877210694069}
   objOutput: []
+  objExtraput: []
   objIncompativel: []
   outputIncompativeis: []
   status: 0

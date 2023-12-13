@@ -21,6 +21,11 @@ TagManager:
   - DefeatMenu
   - WithInteraction
   - NoInteraction
+  - TipsCanvas
+  - InventoryImage
+  - GameManager
+  - ButtonHelpCanvas
+  - FinalObjectToWinTheGame
   layers:
   - Default
   - TransparentFX

@@ -7,9 +7,10 @@ public abstract class Objects : MonoBehaviour
     [Header("Scriptable Object Settings: ")]
     public ObjInfo objInfo;
 
-    [Header("Inputs and Outputs: ")]
+    [Header("Inputs, Outputs e Extraput: ")]
     public Objects[] objInput;
     public Objects[] objOutput;
+    public Objects[] objExtraput;
 
     [Header("Incompatibilidade: ")]
     public Objects[] objIncompativel;

@@ -12,7 +12,7 @@ public class TipsButton : Buttons
     private GameObject blockObject;
 
     [SerializeField]
-    private bool status = false;
+    internal bool status = false;
 
     public override void Click()
     {

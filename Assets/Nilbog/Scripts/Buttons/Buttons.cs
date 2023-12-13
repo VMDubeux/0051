@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Button))]
-public abstract class Buttons : MonoBehaviour, IPointerClickHandler//, IPointerUpHandler
+public abstract class Buttons : MonoBehaviour, IPointerClickHandler
 {
     internal Button currentButton;
 
