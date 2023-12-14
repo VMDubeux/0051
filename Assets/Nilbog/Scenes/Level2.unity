@@ -2214,7 +2214,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &495998190
 GameObject:
@@ -2259,7 +2259,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &506547591
 GameObject:
@@ -8808,7 +8808,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &990267641
 GameObject:
@@ -10190,7 +10190,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1260969056
 GameObject:
@@ -11158,7 +11158,7 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 08253c62b90ffac45bfb178d373acb60, type: 3}
   - Name: Guerreiro
     Clip: {fileID: 8300000, guid: 06b5a6f977b6a6c419ad6275c203a354, type: 3}
-  - Name: GuerreiroTriste
+  - Name: GoblinTriste
     Clip: {fileID: 8300000, guid: 228a0cd67e041f343934c060d04e3189, type: 3}
   - Name: "Vit\xF3ria"
     Clip: {fileID: 8300000, guid: cc07db5520ec32e4b9b7741e3bbd5ac3, type: 3}
@@ -11277,7 +11277,7 @@ Transform:
   - {fileID: 1553033260}
   - {fileID: 1754786106}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684553083
 GameObject:
@@ -11969,7 +11969,7 @@ Transform:
   m_Children:
   - {fileID: 1835657173}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1934863912
 GameObject:
@@ -12127,7 +12127,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1956295755
 GameObject:
@@ -13932,7 +13932,7 @@ Transform:
   m_Children:
   - {fileID: 879857979}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2221103326509856430
 Transform:

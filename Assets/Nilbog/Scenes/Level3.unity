@@ -347,7 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MusicSounds:
   - Name: Theme
-    Clip: {fileID: 8300000, guid: 2e36d99ec4041f449aaa763cf03e0337, type: 3}
+    Clip: {fileID: 8300000, guid: 8fb7978377137034a96f304cceedbf45, type: 3}
   SfxSounds:
   - Name: Click
     Clip: {fileID: 8300000, guid: 2e84259c3d70eaa49999026e53259f9b, type: 3}
@@ -367,7 +367,7 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 7c3ce2b3c8bbfba4d847f4d728fbd043, type: 3}
   - Name: Goblin
     Clip: {fileID: 8300000, guid: 06b5a6f977b6a6c419ad6275c203a354, type: 3}
-  - Name: GuerreiroTriste
+  - Name: GoblinTriste
     Clip: {fileID: 8300000, guid: 228a0cd67e041f343934c060d04e3189, type: 3}
   - Name: "Vit\xF3ria"
     Clip: {fileID: 8300000, guid: cc07db5520ec32e4b9b7741e3bbd5ac3, type: 3}

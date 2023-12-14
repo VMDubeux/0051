@@ -167,14 +167,33 @@ public sealed class InteractiveObjects : Objects
     public override void OnMouseDown()
     {
         Inventory.instance.AddImage(GetComponent<InteractiveObjects>().objInfo.sprite);
-        AudioManager.Instance.PlaySFX(gameObject.name, 1.0f);
         GameManager.Instance.LastSelected = GameManager.Instance.CurrentSelected;
         GameManager.Instance.CurrentSelected = this;
         Active();
         Compatibilidade();
+        ManagingSFX();
     }
 
-    IEnumerator Vibration() 
+    private void ManagingSFX()
+    {
+        if (!CompareTag("FinalObjectToWin") && !CompareTag("FinalObjectToWinTheGame"))
+        {
+            AudioManager.Instance.PlaySFX(gameObject.name, 1.0f);
+        }
+        else
+        {
+            if (GetComponent<InteractiveObjects>().status == true)
+            {
+                AudioManager.Instance.PlaySFX(gameObject.name, 1.0f);
+            }
+            else
+            {
+                AudioManager.Instance.PlaySFX("GoblinTriste", 1.0f);
+            }
+        }
+    }
+
+    IEnumerator Vibration()
     {
         Handheld.Vibrate();
         yield return new WaitForSeconds(0.5f);
