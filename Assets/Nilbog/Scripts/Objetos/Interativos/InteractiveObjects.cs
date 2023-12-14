@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -158,6 +159,7 @@ public sealed class InteractiveObjects : Objects
 
         else if (outputIncompativeis[i].CompareTag("DefeatMenu"))
         {
+            StartCoroutine(Vibration());
             SceneManaging.OnLevel += SceneManaging.Instance.DefeatReloadScene;
         }
     }
@@ -170,14 +172,12 @@ public sealed class InteractiveObjects : Objects
         GameManager.Instance.CurrentSelected = this;
         Active();
         Compatibilidade();
-        ChangeImage();
     }
 
-    private void ChangeImage()
+    IEnumerator Vibration() 
     {
-
-
-        
+        Handheld.Vibrate();
+        yield return new WaitForSeconds(0.5f);
     }
 
 

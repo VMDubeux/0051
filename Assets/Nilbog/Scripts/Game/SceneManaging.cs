@@ -15,7 +15,7 @@ public class SceneManaging : MonoBehaviour
     private int sceneNumber;
     private int actualScene;
 
-    public Sprite image;
+    public GameObject canvasVitoria;
 
     void Awake()
     {
@@ -60,11 +60,13 @@ public class SceneManaging : MonoBehaviour
 
     public void VictoryChangeScene()
     {
+        canvasVitoria.SetActive(true);
         StartCoroutine(GoToScene(scene.buildIndex + 1));
     }
 
     public void VictoryChangeSceneToMainMenu()
     {
+        canvasVitoria.SetActive(true);
         StartCoroutine(GoToScene(0));
     }
 
