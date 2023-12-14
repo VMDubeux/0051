@@ -15203,7 +15203,7 @@ GameObject:
   - component: {fileID: 829205549737761714}
   m_Layer: 0
   m_Name: Tocha
-  m_TagString: WithInteraction
+  m_TagString: NoInteraction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15226,10 +15226,10 @@ MonoBehaviour:
   objExtraput:
   - {fileID: 919132148363191920}
   objIncompativel:
+  - {fileID: 3469287837554526393}
+  - {fileID: 919132147599673845}
   - {fileID: 919132148363191920}
   - {fileID: 883407090}
-  - {fileID: 919132147599673845}
-  - {fileID: 3469287837554526393}
   outputIncompativeis:
   - {fileID: 1589624324}
   - {fileID: 1589624324}
@@ -16410,7 +16410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9c533f94eb46c4aafb54fc9e9f84a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objInfo: {fileID: 11400000, guid: 3e3667fa85f022c43b1bd399c8579f15, type: 2}
+  objInfo: {fileID: 11400000, guid: 61f3f4de8a06da94f9805d4231905919, type: 2}
   objInput: []
   objOutput: []
   objExtraput: []

@@ -8232,14 +8232,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778020150}
-  m_LocalRotation: {x: 0.23459674, y: 0.008367634, z: 0.0026650284, w: 0.9720532}
-  m_LocalPosition: {x: -0.1918, y: 3.889, z: -10.499998}
-  m_LocalScale: {x: 4.1741304, y: 6.7480793, z: 2.7059}
+  m_LocalRotation: {x: 0.2317535, y: 0.17042677, z: -0.036512233, w: 0.95703286}
+  m_LocalPosition: {x: -14.8, y: 5.19, z: -29.89}
+  m_LocalScale: {x: 2.93, y: 4.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 879857979}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 27.132, y: 1.128, z: 0.586}
+  m_LocalEulerAnglesHint: {x: 27.132, y: 20.336, z: 0.586}
 --- !u!65 &778020152
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15299,10 +15299,8 @@ MonoBehaviour:
   objOutput: []
   objExtraput: []
   objIncompativel:
-  - {fileID: 7567305999950516872}
   - {fileID: 7054888888094214772}
   outputIncompativeis:
-  - {fileID: 1070721625}
   - {fileID: 1070721625}
   status: 0
   objDerrota: {fileID: 1202711427}
@@ -21695,13 +21693,7 @@ MonoBehaviour:
   objExtraput: []
   objIncompativel:
   - {fileID: 4344255742850393875}
-  - {fileID: 8985154661444133118}
-  - {fileID: 9050617877210694069}
-  - {fileID: 7567305999950516872}
   outputIncompativeis:
-  - {fileID: 1070721625}
-  - {fileID: 1070721625}
-  - {fileID: 1070721625}
   - {fileID: 1070721625}
   status: 0
   objDerrota: {fileID: 1202711427}
@@ -23264,8 +23256,10 @@ MonoBehaviour:
   - {fileID: 9050617877210694069}
   objOutput: []
   objExtraput: []
-  objIncompativel: []
-  outputIncompativeis: []
+  objIncompativel:
+  - {fileID: 7054888888094214772}
+  outputIncompativeis:
+  - {fileID: 1070721625}
   status: 0
   objDerrota: {fileID: 1202711427}
 --- !u!114 &9050617877210694070

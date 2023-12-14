@@ -15,3 +15,6 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 56f5125cd39376940ab3bd95ffba9b72, type: 3}
   sprite_2: {fileID: 21300000, guid: a2145c02c116343438e4f26bb925b411, type: 3}
   particleEffect: []
+  notasDerrota:
+  - {fileID: 2062503657406717519, guid: 7dd6ce0cb0c342546a7ce0f83ba07323, type: 3}
+  - {fileID: 2062503657406717519, guid: d259b362d30fab44aa95ebcedb31cbf5, type: 3}
