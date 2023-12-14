@@ -11,7 +11,7 @@ public class GameplayButton : Buttons
 
     private void Start()
     {
-        sceneNumber = GameManager.Instance.actualScene;
+        sceneNumber = SceneManaging.Instance.scene.buildIndex;
     }
 
     public override void Click()

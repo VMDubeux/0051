@@ -22,7 +22,6 @@ public class Gyro : MonoBehaviour
         float rotationScale = 0.1f;
 
         Vector3 targetEulerAngles = previousEulerAngles + gyroInput * Time.deltaTime * Mathf.Rad2Deg * rotationScale;
-        Debug.Log(targetEulerAngles);
         targetEulerAngles.x = angleX; // Only this line has been added
         targetEulerAngles.z = angleZ;
 

@@ -20,9 +20,6 @@ public class GameManager : MonoBehaviour
 
     internal GameObject TipsCanvas;
 
-    //private Canvas Derrota;
-    public Sprite Image;
-
     private void Start()
     {
         UnityEngine.Rendering.DebugManager.instance.enableRuntimeUI = false;
@@ -70,11 +67,5 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         LastSelected = null;
         CurrentSelected = null;
-    }
-
-    private void Update()
-    {
-        if (FindObjectOfType<Canvas>().CompareTag("DefeatMenu"))
-            Inventory.instance.AddImage(Image);
     }
 }
