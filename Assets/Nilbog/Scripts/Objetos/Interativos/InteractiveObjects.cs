@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -160,6 +161,7 @@ public sealed class InteractiveObjects : Objects
         else if (outputIncompativeis[i].CompareTag("DefeatMenu"))
         {
             StartCoroutine(Vibration());
+            objDerrota.GetComponent<TMP_Text>().text = GetComponent<InteractiveObjects>().objInfo.notasDerrota[i].text;
             SceneManaging.OnLevel += SceneManaging.Instance.DefeatReloadScene;
         }
     }
@@ -198,6 +200,4 @@ public sealed class InteractiveObjects : Objects
         Handheld.Vibrate();
         yield return new WaitForSeconds(0.5f);
     }
-
-
 }

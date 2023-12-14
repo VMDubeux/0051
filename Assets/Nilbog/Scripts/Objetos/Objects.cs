@@ -19,6 +19,9 @@ public abstract class Objects : MonoBehaviour
     [Header("Situação:")]
     public bool status;
 
+    [Header("Texto Derrota")]
+    public GameObject objDerrota;
+
     public abstract void Active();
 
     public abstract void Connect();
