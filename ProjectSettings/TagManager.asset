@@ -27,6 +27,11 @@ TagManager:
   - ButtonHelpCanvas
   - FinalObjectToWinTheGame
   - SceneManaging
+  - ScreenBlock
+  - Guano
+  - Estalactite
+  - Sol
+  - ScreenBlock2
   layers:
   - Default
   - TransparentFX

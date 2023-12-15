@@ -16,6 +16,7 @@ public class SceneManaging : MonoBehaviour
     private int actualScene;
 
     public GameObject canvasVitoria;
+    public GameObject blockCanvasVitoria;
 
     void Awake()
     {
@@ -61,6 +62,7 @@ public class SceneManaging : MonoBehaviour
     public void VictoryChangeScene()
     {
         canvasVitoria.SetActive(true);
+        blockCanvasVitoria.SetActive(true);
         AudioManager.Instance.PlaySFX("Vitória", 1.0f);
         StartCoroutine(GoToScene(scene.buildIndex + 1));
     }
@@ -68,6 +70,7 @@ public class SceneManaging : MonoBehaviour
     public void VictoryChangeSceneToMainMenu()
     {
         canvasVitoria.SetActive(true);
+        blockCanvasVitoria.SetActive(true);
         AudioManager.Instance.PlaySFX("Vitória", 1.0f);
         StartCoroutine(GoToScene(0));
     }

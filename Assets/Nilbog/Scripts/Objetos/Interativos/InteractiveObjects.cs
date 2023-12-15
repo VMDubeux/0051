@@ -131,25 +131,234 @@ public sealed class InteractiveObjects : Objects
             {
                 if (i == j)
                 {
+                    #region True (L) x True (C)
                     if (objIncompativel[i] == GameManager.Instance.LastSelected
-                        && objIncompativel[i].CompareTag("NoInteraction")
-                        && objIncompativel[i].status == false)
+                        && objIncompativel[i].status == true //Status do LastSelected é "True"
+                        && status == true) //Status do CurrentSelected é "True"
                     {
-                        AnaliseCompatibilidade(i, j);
+                        switch (gameObject.name)
+                        {
+                            case "Arbusto":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Morcegos":
+                                if (objIncompativel[i].name == "Varinha") AnaliseCompatibilidade(j);
+                                break;
+                            case "Dragao":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Mascara":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Pedra_3":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Rato":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Tocha":
+                                if (objIncompativel[i].name == "Pedra_3" ||
+                                    objIncompativel[i].name == "Rato" ||
+                                    objIncompativel[i].name == "Balao_2")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Balao_2":
+                                if (objIncompativel[i].name == "Tocha" ||
+                                    objIncompativel[i].name == "Pedra_3")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                        }
                     }
+                    #endregion
 
+                    #region True (L) x False (C)
                     else if (objIncompativel[i] == GameManager.Instance.LastSelected
-                        && !objIncompativel[i].CompareTag("NoInteraction")
-                        && objIncompativel[i].status == true)
+                        && objIncompativel[i].status == true //Status do LastSelected é "True"
+                        && status == false)//Status do CurrentSelected é "False"
                     {
-                        AnaliseCompatibilidade(i, j);
+                        switch (gameObject.name)
+                        {
+                            case "Guano":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Morcegos":
+                                if (objIncompativel[i].name == "Varinha" ||
+                                    objIncompativel[i].name == "Pedra_1" ||
+                                    objIncompativel[i].name == "Torta")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Goblin_1":
+                                if (objIncompativel[i].name == "Dragao" ||
+                                    objIncompativel[i].name == "FrutasEnvenenadas")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Dragao":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Pedra_2":
+                                if (objIncompativel[i].name == "Vidro" &&
+                                    GameObject.FindWithTag("Sol").
+                                    GetComponent<InteractiveObjects>().status == false)
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Estalactite":
+                                if (objIncompativel[i].name == "Sol") AnaliseCompatibilidade(j);
+                                break;
+                            case "Carangueijo":
+                                if (objIncompativel[i].name == "Pedra_2" &&
+                                    GameObject.FindWithTag("Estalactite").
+                                    GetComponent<InteractiveObjects>().status == false)
+                                    AnaliseCompatibilidade(j);
+                                else if (objIncompativel[i].name == "Vidro" ||
+                                    objIncompativel[i].name == "Guerreiro")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Mascara":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Guerreiro":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Balao_1":
+                                if (objIncompativel[i].name == "Pedra_3")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Tocha":
+                                if (objIncompativel[i].name == "Pedra_3" ||
+                                    objIncompativel[i].name == "Rato")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Balao_2":
+                                if (objIncompativel[i].name == "Tocha" ||
+                                    objIncompativel[i].name == "Pedra_3")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                        }
                     }
+                    #endregion
+
+                    #region False (L) x True (C)
+                    else if (objIncompativel[i] == GameManager.Instance.LastSelected
+                        && objIncompativel[i].status == false //Status do LastSelected é "False"
+                        && status == true) //Status do CurrentSelected é "True"
+                    {
+                        switch (gameObject.name)
+                        {
+                            case "Torta":
+                                if (GameObject.FindWithTag("Guano").
+                                    GetComponent<InteractiveObjects>().
+                                    status == false) AnaliseCompatibilidade(j);
+                                break;
+                            case "Passaro":
+                                if (GameObject.FindWithTag("DisappearObject").
+                                    GetComponent<InteractiveObjects>().
+                                    status == false) AnaliseCompatibilidade(j);
+                                break;
+                            case "Vidro":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Carangueijo":
+                                if (objIncompativel[i].name == "Guerreiro")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Pedra_3":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Rato":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Balao_1":
+                                if (objIncompativel[i].name == "Tocha")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Tocha":
+                                if (objIncompativel[i].name == "Balao_2")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                        }
+                    }
+                    #endregion
+
+                    #region False (L) x False (C)
+                    else if (objIncompativel[i] == GameManager.Instance.LastSelected
+                        && objIncompativel[i].status == false //Status do LastSelected é "False"
+                        && status == false) //Status do CurrentSelected é "False"
+                    {
+                        switch (gameObject.name)
+                        {
+                            case "Torta":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Passaro":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Varinha":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Vidro":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Pedra_2":
+                                if (objIncompativel[i].name == "Vidro" ||
+                                    objIncompativel[i].name == "Agua")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Estalactite":
+                                if (objIncompativel[i].name == "Sol" ||
+                                    objIncompativel[i].name == "Pedra_2")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Carangueijo":
+                                if (objIncompativel[i].name == "Pedra_2" ||
+                                    objIncompativel[i].name == "Vidro" ||
+                                    objIncompativel[i].name == "Guerreiro")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Mascara":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Guerreiro":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Pedra_3":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Rato":
+                                AnaliseCompatibilidade(j);
+                                break;
+                            case "Balao_1":
+                                if (objIncompativel[i].name == "Tocha" /*||
+                                    objIncompativel[i].name == "Pedra_3"*/)
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Tocha":
+                                if (/*objIncompativel[i].name == "Pedra_3" ||*/
+                                    objIncompativel[i].name == "Rato" ||
+                                    objIncompativel[i].name == "Balao_1" ||
+                                    objIncompativel[i].name == "Balao_2")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                            case "Balao_2":
+                                if (objIncompativel[i].name == "Tocha")
+                                    AnaliseCompatibilidade(j);
+                                break;
+                        }
+
+                        switch (objIncompativel[i].name) //Analisar posteriormente, com testes
+                        {
+                            case "Pedra_1":
+                                AnaliseCompatibilidade(j);
+                                break;
+                        }
+
+                    }
+                    #endregion
                 }
             }
         }
     }
 
-    private void AnaliseCompatibilidade(sbyte i, sbyte j)
+    private void AnaliseCompatibilidade(sbyte j)
     {
         outputIncompativeis[j].gameObject.SetActive(true);
 
@@ -158,10 +367,10 @@ public sealed class InteractiveObjects : Objects
                 transform.position,
                 outputIncompativeis[j].transform.rotation);
 
-        else if (outputIncompativeis[i].CompareTag("DefeatMenu"))
+        else if (outputIncompativeis[j].CompareTag("DefeatMenu"))
         {
             StartCoroutine(Vibration());
-            objDerrota.GetComponent<TMP_Text>().text = GetComponent<InteractiveObjects>().objInfo.notasDerrota[i].text;
+            objDerrota.GetComponent<TMP_Text>().text = GetComponent<InteractiveObjects>().objInfo.notasDerrota[j].text;
             SceneManaging.OnLevel += SceneManaging.Instance.DefeatReloadScene;
         }
     }

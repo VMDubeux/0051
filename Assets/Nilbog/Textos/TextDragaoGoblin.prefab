@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ele est\xE1 vindo...\n\nN\xE3o tem como sair.\n\n<i>You shall not pass!</i>"
+  m_text: "Ele est\xE1 vindo...\n\nN\xE3o tem como escapar.\n\n<i>You shall not pass!</i>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3fe2d0091b570a4d9db23ce97778b30, type: 2}
   m_sharedMaterial: {fileID: -5980366910388803408, guid: a3fe2d0091b570a4d9db23ce97778b30, type: 2}
