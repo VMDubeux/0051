@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Doces e suculentas parecem, \n\nmas perigosas e mortais h\xE3o de ser!"
+  m_text: "Doces e suculentas parecem, \n\nmas perigosas e letais h\xE3o de ser!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3fe2d0091b570a4d9db23ce97778b30, type: 2}
   m_sharedMaterial: {fileID: -5980366910388803408, guid: a3fe2d0091b570a4d9db23ce97778b30, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d8ed5e7183c1d43848d16598eb0430, type: 3}
   m_Name: Rato
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: dca42ed935036d247be38449e0d95530, type: 3}
+  sprite: {fileID: 21300000, guid: cb794845c2ea5ba439ef0b5da97cf8de, type: 3}
   sprite_2: {fileID: 21300000, guid: a2145c02c116343438e4f26bb925b411, type: 3}
   particleEffect: []
   notasDerrota:
