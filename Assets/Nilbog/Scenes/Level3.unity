@@ -8851,7 +8851,7 @@ GameObject:
   - component: {fileID: 887428413}
   - component: {fileID: 887428412}
   - component: {fileID: 887428411}
-  - component: {fileID: 887428410}
+  - component: {fileID: 887428414}
   m_Layer: 5
   m_Name: ButtonReturn
   m_TagString: Untagged
@@ -8879,19 +8879,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -375}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &887428410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887428408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aff30d9bea6b314a85b26f117d4cc69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menu: {fileID: 1975653312}
 --- !u!114 &887428411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8974,6 +8961,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887428408}
   m_CullTransparentMesh: 1
+--- !u!114 &887428414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887428408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63aa30fc65349d24c8cf593f7d676d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 1975653312}
 --- !u!1 &916863840
 GameObject:
   m_ObjectHideFlags: 0
@@ -15389,8 +15389,7 @@ MonoBehaviour:
   objInfo: {fileID: 11400000, guid: fbf2f15b2889eb9439b8f17908c7064b, type: 2}
   objInput: []
   objOutput: []
-  objExtraput:
-  - {fileID: 919132148363191920}
+  objExtraput: []
   objIncompativel:
   - {fileID: 3469287837554526393}
   - {fileID: 919132147599673845}
@@ -15563,8 +15562,7 @@ MonoBehaviour:
   objInfo: {fileID: 11400000, guid: a0d87e95cc787e042be6f62de96c4562, type: 2}
   objInput:
   - {fileID: 3469287837554526393}
-  objOutput:
-  - {fileID: 919132148363191920}
+  objOutput: []
   objExtraput: []
   objIncompativel:
   - {fileID: 829205549737761713}
