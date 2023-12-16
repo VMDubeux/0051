@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,14 +12,20 @@ public class EstalactiteAnim : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        
     }
 
     private void OnMouseDown()
     {
         foreach (GameObject obj in stone)
         {
-            if (obj.GetComponent<InteractiveObjects>().status == true && GetComponent<InteractiveObjects>().status == true)
-                anim.SetBool("Descendo", true);
+            Invoke("Chamar(obj)", 2f);
+
         }
+    }
+    private void Chamar(GameObject obj)
+    {
+        if (obj.GetComponent<InteractiveObjects>().status == true && GetComponent<InteractiveObjects>().status == true)
+            anim.SetBool("Descendo", true);
     }
 }
