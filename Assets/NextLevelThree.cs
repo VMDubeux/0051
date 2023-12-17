@@ -11,7 +11,7 @@ public class NextLevelThree : Buttons
     public override void Click()
     {
         menu.SetActive(false);
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
 
         base.Click();
     }

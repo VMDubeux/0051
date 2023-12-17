@@ -1,11 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EstalactiteAnim : MonoBehaviour
+public class StoneAnimThree : MonoBehaviour
 {
-    public GameObject[] pedra = new GameObject[1];
+    public GameObject[] rato = new GameObject[1];
 
     private Animator anim;
 
@@ -16,12 +15,10 @@ public class EstalactiteAnim : MonoBehaviour
 
     private void Update()
     {
-        foreach (GameObject obj in pedra)
+        foreach (GameObject obj in rato)
         {
             if (obj.GetComponent<InteractiveObjects>().status == true && GetComponent<InteractiveObjects>().status == true)
                 anim.SetBool("Jogando", true);
         }
     }
 }
-
-

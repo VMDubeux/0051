@@ -4,7 +4,7 @@ public class PlayButton : Buttons
 {
     public override void Click()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
         base.Click();
     }
 }

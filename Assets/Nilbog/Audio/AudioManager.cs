@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
     {
         Sound s = Array.Find(SfxSounds, s => s.Name == Name);
 
-        SfxSource.clip = s.Clip;
+       // SfxSource.clip = s.Clip;
         SfxSource.PlayOneShot(s.Clip, Volume);
 
     }
