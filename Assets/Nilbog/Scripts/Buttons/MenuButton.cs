@@ -4,7 +4,7 @@ public class MenuButton : Buttons
 {
     public override void Click()
     {
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
         base.Click();
     }
 }

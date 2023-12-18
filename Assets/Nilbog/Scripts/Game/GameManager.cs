@@ -12,30 +12,29 @@ public class GameManager : MonoBehaviour
     internal Objects LastSelected;
     internal Objects CurrentSelected;
 
-    private int scene;
-    internal int actualScene;
+    private string scene;
+    internal string actualScene;
 
     public static int Count;
     public int numb;
 
     internal GameObject TipsCanvas;
 
+    internal Scene _scene;
+
     private void Start()
     {
         UnityEngine.Rendering.DebugManager.instance.enableRuntimeUI = false;
 
-        actualScene = SceneManaging.Instance.scene.buildIndex;
-
-        Debug.Log($"Cena de agora: {actualScene}");
-
         if (Instance == null)
         {
             InstanceBasics();
+            Debug.Log($"Cena de agora: {SceneManager.GetActiveScene().name}");
             Debug.Log(numb);
         }
         else
         {
-            if (actualScene != GameObject.FindWithTag("GameManager").GetComponent<GameManager>().scene)
+            if (SceneManager.GetActiveScene().name != GameObject.FindWithTag("GameManager").GetComponent<GameManager>().scene)
             {
                 Destroy(GameObject.FindWithTag("GameManager"));
                 InstanceBasics();
@@ -63,7 +62,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         gameObject.tag = "GameManager";
-        scene = SceneManaging.Instance.scene.buildIndex;
+        scene = SceneManager.GetActiveScene().name;
         DontDestroyOnLoad(gameObject);
         LastSelected = null;
         CurrentSelected = null;

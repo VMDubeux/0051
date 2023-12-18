@@ -233,6 +233,9 @@ public sealed class InteractiveObjects : Objects
                                     objIncompativel[i].name == "Pedra_3")
                                     AnaliseCompatibilidade(j);
                                 break;
+                            case "Rato":
+                                AnaliseCompatibilidade(j);
+                                break;
                         }
                     }
                     #endregion
@@ -272,7 +275,8 @@ public sealed class InteractiveObjects : Objects
                                     AnaliseCompatibilidade(j);
                                 break;
                             case "Tocha":
-                                if (objIncompativel[i].name == "Balao_2")
+                                if (objIncompativel[i].name == "Balao_2" ||
+                                    objIncompativel[i].name == "Rato")
                                     AnaliseCompatibilidade(j);
                                 break;
                         }
@@ -327,13 +331,11 @@ public sealed class InteractiveObjects : Objects
                                 AnaliseCompatibilidade(j);
                                 break;
                             case "Balao_1":
-                                if (objIncompativel[i].name == "Tocha" /*||
-                                    objIncompativel[i].name == "Pedra_3"*/)
+                                if (objIncompativel[i].name == "Tocha")
                                     AnaliseCompatibilidade(j);
                                 break;
                             case "Tocha":
-                                if (/*objIncompativel[i].name == "Pedra_3" ||*/
-                                    objIncompativel[i].name == "Rato" ||
+                                if (objIncompativel[i].name == "Rato" ||
                                     objIncompativel[i].name == "Balao_1" ||
                                     objIncompativel[i].name == "Balao_2")
                                     AnaliseCompatibilidade(j);
